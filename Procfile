@@ -1,1 +1,1 @@
-"web: gunicorn pastelaria.wsgi --log-file -" 
+web: gunicorn pastelaria.wsgi
