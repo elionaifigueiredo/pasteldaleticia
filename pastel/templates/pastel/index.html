@@ -1,20 +1,21 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Pastelaria da Letícia</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
+
 <body>
+    <div class="page-header">
+        <h1><a href="/">Django</a></h1>
+    </div>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
 
-    {{ msg }}
-
-    <h1>Elionai da S Figueiredo</h1>
-    
+                {% block content %}
+                <ul>
+                    {% for pastel in lista %}
+                    <li>Pastel de: {{pastel.nome}}</li>                    
+                    {% endfor %}
+                </ul>
+                {{ msg }}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
 </body>
-</html>
