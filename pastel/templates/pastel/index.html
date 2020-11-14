@@ -10,7 +10,9 @@
                 {% block content %}
                 <ul>
                     {% for pastel in lista %}
-                    <li>Pastel de: {{pastel.nome}}</li>                    
+                    <li>Pastel de: {{pastel.nome}}</li>    
+                    <li>Ainda Tem?: {{pastel.desponivel}}</li>
+                    <li>Quantidade: {{pastel.quantidade}}</li>
                     {% endfor %}
                 </ul>
                 {{ msg }}
