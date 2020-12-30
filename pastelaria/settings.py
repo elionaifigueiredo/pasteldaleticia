@@ -16,7 +16,6 @@ import django_heroku
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 #BASE_DIR = Path(__file__).resolve().parent.parent
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 STATIC_URL = '/static/'
 
 
@@ -24,10 +23,13 @@ STATIC_URL = '/static/'
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'e6(*x)=_h&d^wag=rb9^nb=&%934!k-lv^b9=8cuwa1=oq@-+b'
-
+#SECRET_KEY = 'e6(*x)=_h&d^wag=rb9^nb=&%934!k-lv^b9=8cuwa1=oq@-+b'
+SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'e6(*x)=_h&d^wag=rb9^nb=&%934!k-lv^b9=8cuwa1=oq@-+b')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True
+
+DEBUG = os.environ.get('DJANGO_DEBUG','') != 'False'
 
 ALLOWED_HOSTS = []
 
@@ -125,7 +127,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static', 'var/www/static/',)
 
 django_heroku.settings(locals())
 
