@@ -24,7 +24,7 @@ STATIC_URL = '/static/'
 
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEY = 'e6(*x)=_h&d^wag=rb9^nb=&%934!k-lv^b9=8cuwa1=oq@-+b'
-SECRET_KEY = os.environ['SECRET_KEY']
+#SECRET_KEY = os.environ['SECRET_KEY']
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'e6(*x)=_h&d^wag=rb9^nb=&%934!k-lv^b9=8cuwa1=oq@-+b')
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True
