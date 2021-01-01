@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import os
 import django_heroku
+import cloudinary  # cloudinary
+import cloudinary.uploader  # cloudinary
+import cloudinary.api  # cloudinary
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 #BASE_DIR = Path(__file__).resolve().parent.parent
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -44,8 +47,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap4',
+    'cloudinary',
     'pastel'
 ]
+
+cloudinary.config( 
+  cloud_name = "duxvmspoo", 
+  api_key = "764242222722652", 
+  api_secret = "zmxV1970QBh2lhhRdqqUKgT85Oo" 
+)
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

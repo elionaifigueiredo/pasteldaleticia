@@ -24,6 +24,8 @@ def post_new(request):
      else:
          form = PastelForm()
      return render(request, 'pastel/post_edit.html', {'form': form})
+ 
+ 
 
 
   
