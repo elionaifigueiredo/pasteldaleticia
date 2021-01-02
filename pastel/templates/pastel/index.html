@@ -15,10 +15,7 @@
 </html>
 
 <body>
-    <div class="page-header">
-        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-        <h1><a href="/">Cadastro Pastel</a></h1>
-    </div>
+
     <header>
         <div class="navbar navbar-dark bg-dark shadow-sm">
             <div class="container d-flex justify-content-between">
@@ -32,9 +29,9 @@
 
                 </a>
                 <img src="https://imagepng.org/wp-content/uploads/2017/08/WhatsApp-icone.png" height="30" , width="">
-                (92-98170-4782)
-                <img src="https://imagepng.org/wp-content/uploads/2017/08/instagram-icone-icon-1.png" height="30" ,
-                    width="">Primary</a>
+                <h3 style="color:white;">(92) 99283-7203</h3> <img src="https://imagepng.org/wp-content/uploads/2017/08/instagram-icone-icon-1.png"
+                    height="30" , width="">
+                <h3 style="color:white;">pastelaria_da_leticiaoficial</h3></a>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader"
                     aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,47 +45,54 @@
         <section class="jumbotron text-center">
             <div class="container">
                 <h1 class="display-1">Pastelaria da Letícia</h1>
-                <p class="lead text-muted">Algo curto e direto, sobre a coleção abaixo (conteúdo, criador e etc). Faça
-                    com
-                    que
-                    seja curto e legal, mas não tão curto ao ponto de as pessoas pularem ele.</ </div> </section> <div
-                        class="album py-5 bg-light">
-                    <div class="container">
+                <p class="lead text-muted">Venha Conhecer a Pastelaria da Letícia com um Ambiente
+                    confortavél;
+                    <br>
+                    Você irá provar as delícias de Pastel, Sopa, Lasanha, Batata Frita, Salgados,
+                    Sucos e Refrigerantes!
+                    <br>
+                    Veja Abaixo os Sabores de Pasteis e faça seu Pedido ou venha até nós!
+                    <br>
+                    Localizado na Rua 02 de Maio no Bairro da Paz - Manaus / Am
+            </div>
+        </section>
+        <div class="album py-5 bg-light">
+            <div class="container">
 
-                        <div class="row">
-                            {% for pastel in lista %}
-                            <div class="col-md-4 ">
-                                <div class="mb-4 shadow-sm">
-                                    <div class="card-header bg-warning mb-3">
-                                        <h5 class="card-title">{{pastel.nome}}</h5>
-                                    </div>
-                                    <img src="{{ pastel.foto.url }}" class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail"
-                                        alt="Card image cap">
-
-                                    <div class="card-body">
-                                        <p class="card-text">
-                                            <h4> Ingredientes:</h4></br> {{pastel.descricao}}.
-                                        </p>
-                                        <hr class="my-4">
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <div class="btn-group">
-                                                <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
-                                            </div>
-
-                                            <small class="text-muted">
-                                                <h3 class="display-6">R$: {{pastel.preco}}</h3>
-                                            </small>
-                                        </div>
-                                    </div>
-                                </div>
-
+                <div class="row">
+                    {% for pastel in lista %}
+                    <div class="col-md-4 ">
+                        <div class="mb-4 shadow-sm">
+                            <div class="card-header bg-warning mb-3">
+                                <h5 class="card-title">{{pastel.nome}}</h5>
                             </div>
-                            {% endfor %}
+                            <img src="{{ pastel.foto.url }}" class="card-img-top" data-src="holder.js/100px225?theme=thumb&bg=55595c&fg=eceeef&text=Thumbnail"
+                                alt="Card image cap">
+
+                            <div class="card-body">
+                                <p class="card-text">
+                                    <h4> Ingredientes:</h4></br> {{pastel.descricao}}.
+                                </p>
+                                <hr class="my-4">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary">Comprar</button>
+                                    </div>
+
+                                    <small class="text-muted">
+                                        <h3 class="display-6">R$: {{pastel.preco}}</h3>
+                                    </small>
+                                </div>
+                            </div>
                         </div>
 
                     </div>
+                    {% endfor %}
+                </div>
 
             </div>
+
+        </div>
     </main>
     <footer class="text-muted">
         <div class="container">
